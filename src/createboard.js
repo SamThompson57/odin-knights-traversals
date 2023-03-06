@@ -1,14 +1,16 @@
+import { boardLetters } from "./knightmoves";
+
 function createBoard(){
     const board = document.createElement('div')
     board.setAttribute('class', 'board')
 
     for(let y = 8; y > 0 ; y--){
-        for(let x = 1; x < 9; x++){
+        for(let x = 0; x < 8; x++){
             const square = document.createElement('div');
-            square.setAttribute('id', `square${x}${y}`);
+            square.setAttribute('id', `${boardLetters[x] + y}`);
             if ((y+x)%2 == 1){
-                square.setAttribute('class', 'light')
-            } else square.setAttribute('class', 'dark') 
+                square.setAttribute('class', 'dark')
+            } else square.setAttribute('class', 'light') 
             board.appendChild(square)
         }
     }
