@@ -42,6 +42,15 @@ content.appendChild(output)
 
 let pageState = 'START'
 
+const resetDiv = document.createElement('div')
+const reset = document.createElement('button')
+reset.textContent = 'RESET'
+
+resetDiv.setAttribute('class','controls')
+resetDiv.appendChild(reset)
+content.appendChild(resetDiv)
+
+
 export function selection(select){
     console.log(select)
     if (pageState === 'START'){
@@ -68,7 +77,6 @@ export function selection(select){
         instructions.textContent = explain(ansArr)
         return 
     }
-
 }
 
 

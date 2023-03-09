@@ -1,5 +1,6 @@
 import { myMap } from "./knightmoves"
 import move from "./move"
+import shuffleArray from "./shufflearray"
 
 class Graph {
     constructor(vertices){
@@ -27,9 +28,9 @@ class Graph {
             movelist.push(end)
             return movelist
         }
-        const childnodes = this.Adjlist.get(start)
         movelist.push(start)
-
+        const childnodes = this.Adjlist.get(start)
+        shuffleArray(childnodes)
         childnodes.forEach(child => {
             if (!movelist.includes(child)&&!queue.includes(child)) queue.push(child)
         })

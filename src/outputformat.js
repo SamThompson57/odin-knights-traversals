@@ -1,8 +1,13 @@
 
 export function formatOutput (moveArr){
     const output = document.createElement('div')
-    
+
+    const desc = document.createElement('div')
+    desc.setAttribute('class', 'path')
+    desc.textContent = 'An example of the knights path is:'
+    output.appendChild(desc)
     const exampleDiv = document.createElement('div')
+    exampleDiv.setAttribute('class', 'path')
     
     let path = ''
     moveArr.forEach(element => {
@@ -23,13 +28,14 @@ export function explain(moveArr){
 }
 
 export function dispMovement(moveArr){
+    let i = 0
     moveArr.forEach (element => {
         if (element !== moveArr[0]) {
-            const moveSquare = document.createElement('img')
-            document.getElementById(element).appendChild(moveSquare)
-            moveSquare.src = '../img//circle.png'
+            const ringLabel = document.createElement('div')
+            ringLabel.textContent = i
+            ringLabel.setAttribute('class', 'ringlabel')
+            document.getElementById(element).appendChild(ringLabel)
         }
+        i++
     })
-
-    
 }
