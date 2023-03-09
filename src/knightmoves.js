@@ -15,17 +15,3 @@ function buildSquares(){
 }
 
 export const myMap = buildSquares()
-
-function knightMoves(start, end, movelist = [], queue = [start] ){
-    // Take the start node and work out  all connected nodes
-    console.log(`start: ${start}, end: ${end}`)
-    if (start == end) {
-        return movelist.push(end)
-    }
-    // add the child nodes to the queue
-    movelist.push(start)
-    queue.shift()
-    return knightMoves(queue[0], end, movelist, queue)
-    
-}
-export default knightMoves
