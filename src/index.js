@@ -29,11 +29,11 @@ let startVal = ''
 let endVal = ''
 
 const start = document.createElement('div')
-start.textContent = `Start: ${startVal}`
+start.textContent = `Start:`
 controls.appendChild(start)
 
 const end = document.createElement('div')
-end.textContent = `End: ${endVal}`
+end.textContent = `End:`
 controls.appendChild(end)
 
 const output = document.createElement('div')
@@ -46,15 +46,14 @@ const resetDiv = document.createElement('div')
 const reset = document.createElement('button')
 reset.textContent = 'RESET'
 
+
 resetDiv.setAttribute('class','controls')
 resetDiv.appendChild(reset)
 content.appendChild(resetDiv)
 
 
 export function selection(select){
-    console.log(select)
     if (pageState === 'START'){
-        console.log('Start Selected')
         start.textContent = `Start: ${select}`
         startVal = select
         const startSquare = document.createElement('img')
@@ -65,7 +64,6 @@ export function selection(select){
         return 
     }
     if (pageState === 'END' && select !== startVal){
-        console.log('End Selected')
         end.textContent = `End: ${select}`
         endVal = select
         let endSquare = document.getElementById(endVal)
@@ -80,11 +78,14 @@ export function selection(select){
 }
 
 
-/* 
-FEATURES TO IMPLEMENT
-
-
-Arrows to show route
-
-Random Routes
-*/
+reset.onclick = () => {
+    instructions.textContent = "Select START location on the board"
+    const brd = document.getElementById('board')
+    content.removeChild(brd)
+    start.textContent = `Start:`
+    end.textContent = `End:`
+    const out = document.getElementById('output')
+    if (out) content.removeChild(out)
+    pageState = 'START'
+    content.insertBefore(createBoard(), controls)
+}

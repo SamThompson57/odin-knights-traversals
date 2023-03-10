@@ -4,6 +4,7 @@ import { boardLetters } from "./knightmoves";
 function createBoard(){
     const board = document.createElement('div')
     board.setAttribute('class', 'board')
+    board.setAttribute('id', 'board')
 
     for(let y = 8; y > 0 ; y--){
         const label = document.createElement('div')
@@ -33,6 +34,7 @@ function createBoard(){
         numLabel.textContent = num
         board.appendChild(numLabel)
     })
+    collumns.shift()
 
     return board
 }

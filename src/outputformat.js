@@ -1,6 +1,7 @@
 
 export function formatOutput (moveArr){
     const output = document.createElement('div')
+    output.setAttribute('id', 'output')
 
     const desc = document.createElement('div')
     desc.setAttribute('class', 'path')
