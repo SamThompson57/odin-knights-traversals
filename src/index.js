@@ -58,7 +58,7 @@ export function selection(select){
         startVal = select
         const startSquare = document.createElement('img')
         document.getElementById(select).appendChild(startSquare)
-        startSquare.src = '../img//knight.png'
+        startSquare.src = '/img/knight.png'
         instructions.textContent = "Select END location on the board"
         pageState = 'END'
         return 
