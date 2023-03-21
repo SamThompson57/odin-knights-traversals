@@ -1,4 +1,4 @@
-import { endVal, pageState, startVal } from ".";
+import { pageState } from ".";
 
 
 function selection (selection){

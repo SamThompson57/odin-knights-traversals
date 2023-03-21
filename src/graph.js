@@ -1,6 +1,6 @@
 import { myMap } from "./knightmoves"
 import move from "./move"
-import shuffleArray from "./shufflearray"
+import shuffleArray from "./shufflearray.js"
 
 class Graph {
     constructor(vertices){
